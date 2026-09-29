@@ -4,7 +4,8 @@ class Solution {
         Map<Integer, Integer> numMap = new HashMap<>();
         int n = nums.length;
 
-        // Build the hash table
+        // Build the hash table it store nums element as key and index as value 
+        // later we use them  to find complement in hashmap and get the index value
         for (int i = 0; i < n; i++) {
             numMap.put(nums[i], i);
         }
