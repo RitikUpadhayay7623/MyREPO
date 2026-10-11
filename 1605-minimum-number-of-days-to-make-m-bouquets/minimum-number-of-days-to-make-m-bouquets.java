@@ -6,8 +6,8 @@ class Solution {
             return -1;
         }
 
-        int low = Integer.MAX_VALUE;
-        int high = Integer.MIN_VALUE;
+        int low = 0;
+        int high =0;
 
         for (int day : bloomDay) {
             low = Math.min(low, day);
