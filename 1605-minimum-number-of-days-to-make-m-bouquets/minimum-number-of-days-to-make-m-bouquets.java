@@ -14,11 +14,11 @@ class Solution {
             high = Math.max(high, day);
         }
 
-        while (low < high) {
+        while (low <= high) {
             int mid = low + (high - low) / 2;
 
             if (possible(bloomDay, mid, m, k)) {
-                high = mid;
+                high = mid-1;
             } else {
                 low = mid + 1;
             }
@@ -27,7 +27,7 @@ class Solution {
         return low;
     }
 
-    private boolean possible(int[] bloomDay, int day, int m, int k) {
+    static boolean possible(int[] bloomDay, int day, int m, int k) {
         int count = 0;
         int bouquets = 0;
 
