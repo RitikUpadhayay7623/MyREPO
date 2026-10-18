@@ -11,24 +11,24 @@ class Solution {
     //    return false;
     // }
 
-  
+    
+   HashMap<Integer,Integer> map=new HashMap<>();
+   for(int i=0;i<nums.length;i++){
 
-
-        HashSet<Integer> window = new HashSet<>();
-        
-        for (int i = 0; i < nums.length; i++) {
-            // If the window exceeds size k, remove the oldest element
-            if (i > k) {
-                window.remove(nums[i - k - 1]);
-            }
-            
-            // If the element is already in the set, a duplicate exists within distance k
-            if (!window.add(nums[i])) {
-                return true;
-            }
+      if(map.containsKey(nums[i])){
+        int idx=map.get(nums[i]);
+        if(Math.abs(i-idx)<=k){
+            return true;
+        }else{
+            map.put(nums[i],i);
         }
+      }else{
+        map.put(nums[i],i);
+      }
+   }  
+     return false;
+
         
-        return false;
 
     }
 }
