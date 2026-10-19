@@ -1,16 +1,16 @@
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        Map<Integer,Integer> map=new HashMap<>();
-        // for(int i=0;i<numbers.length;i++){
-        //     map.put(numbers[i],i);          PUT THIS INSIDE LOOP BCOZ BOTH HAVE SAME CONDITION REDUCE BIG O TOO
-        // }
+        //HERE LOOP IS SORTED SO WE USE A BETTER APPROACH HERE THAN TWO SUM I
 
-        for(int i=0;i<numbers.length;i++){
-            int comp=target-numbers[i];
-            if(map.containsKey(comp) && map.get(comp)!=i){
-                return new int[]{map.get(comp)+1,i+1};
+        int i=0;
+
+        for(int j=numbers.length-1;j>=0;j=j){     //Here its better to use while(i<j) becoz we already reduce
+            if(numbers[i]+numbers[j]>target){     // j once in loop as j-- so ensuring j reduce only once per iter
+             j--;                                 //we update j=j means no change
+            }else if(numbers[i]+numbers[j]<target){
+               i++;
             }else{
-                map.put(numbers[i],i);
+                 return new int[]{i+1,j+1};
             }
         }
         return new int[]{-1,-1};
