@@ -6,15 +6,17 @@ class Solution {
 
         // Build the hash table it store nums element as key and index as value 
         // later we use them  to find complement in hashmap and get the index value
-        for (int i = 0; i < n; i++) {
-            numMap.put(nums[i], i);
-        }
+        // for (int i = 0; i < n; i++) {
+        //     numMap.put(nums[i], i);
+        // }
 
         // Find the complement
         for (int i = 0; i < n; i++) {
             int complement = target - nums[i];
             if (numMap.containsKey(complement) && numMap.get(complement) != i) {
                 return new int[]{i, numMap.get(complement)};
+            }else{
+                numMap.put(nums[i],i);
             }
         }
 
