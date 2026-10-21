@@ -8,9 +8,9 @@ class Solution {
                 continue;
             }
 
-            if (nums[i] > 0) {
-                break; // Remaining values are also positive.
-            }
+            // if (nums[i] > 0) {
+            //     break; // Remaining values are also positive.
+            // }
 
             int target = -nums[i];
             res.addAll(twoSum(nums, target, i + 1, nums.length - 1));
