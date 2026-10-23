@@ -14,16 +14,17 @@ class Solution {
 
      int red=0;
      int white=0;
-     int blue=0;
+    //  int blue=0;   //can be done wwith two pointers red and white aswell
      for(int val:nums){
       if(val==0){
         red++;
      }
      else if(val==1){
         white++;
-     }else{
-        blue++;
      }
+    //  else{
+    //     blue++;
+    //  }
      }
      int p=0;
      while(red!=0){
@@ -36,10 +37,12 @@ class Solution {
         p++;
         white--;;
      }
-     while(blue!=0){
+     while(p<nums.length){
+        // nums[p]=2;
+        // p++;
+        // blue--;
         nums[p]=2;
         p++;
-        blue--;
      }
       
     }
