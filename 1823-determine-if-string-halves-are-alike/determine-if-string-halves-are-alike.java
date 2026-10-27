@@ -6,12 +6,12 @@ class Solution {
         int b=0;
 
         for(int i=0;i<n/2;i++){
-         if(vowel.indexOf(s.charAt(i))==-1){
+         if(vowel.indexOf(s.charAt(i))!=-1){ 
               a++;
          }
         }
          for(int i=n/2;i<n;i++){
-         if(vowel.indexOf(s.charAt(i))==-1){
+         if(vowel.indexOf(s.charAt(i))!=-1){
               b++;
          }
         }
