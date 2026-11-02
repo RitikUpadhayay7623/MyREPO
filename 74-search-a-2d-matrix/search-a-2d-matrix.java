@@ -5,7 +5,7 @@ class Solution {
 
         // for(int[] arr:matrix){
         //     for(int val:arr){
-        //         if(val==target){
+        //         if(val==target){    NESTED LOOP RESTRICTED
         //             return true;
         //         }
         //     }
@@ -13,14 +13,14 @@ class Solution {
         // return false;
 
             int left=0;
-            int right=(m*n)-1;
+            int right=(m*n)-1; //we taking whole array length at once to avoid nested loop
         while(left<=right){
             int mid=left+(right-left)/2;
 
-          int row=mid/n;
+          int row=mid/n;  //this find row and col index for evry mid we find in this array
           int col=mid%n;
 
-          if(matrix[row][col]==target){
+          if(matrix[row][col]==target){//simple binary serach for target
             return true;
           }else if(matrix[row][col]<target){
             left=mid+1;
